@@ -13,39 +13,67 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            height: 100vh;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            height: 105vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
+            position: relative;
+            transform: scale(0.95); /* Slightly smaller size */
+            transform-origin: top center; /* Keep alignment from the top center */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px; /* Default padding */
+            font-size: 0.95rem; /* Slightly smaller font size */
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background-color: #7351fd;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
         }
 
         .container {
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 40px;
+            background-color: rgba(88, 175, 236, 0.7);
+            padding: 35px; /* Reduced padding */
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Reduced max-width */
             animation: fadeIn 1.5s ease-in-out;
         }
 
         .title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.4rem; /* Reduced font size */
+            margin-bottom: 20px; /* Reduced margin */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
             animation: slideIn 1s ease-in-out;
         }
 
         .form-group {
-            margin: 20px 0;
+            margin: 18px 0; /* Reduced margin */
         }
 
         input[type="file"] {
-            padding: 15px;
-            font-size: 1.2rem;
+            padding: 15px; /* Default padding */
+            font-size: 1.3rem; /* Slightly smaller font size */
             border: none;
             background-color: #fff;
             color: #333;
@@ -59,39 +87,34 @@
         }
 
         button[type="submit"] {
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 15px 28px; /* Default padding */
+            font-size: 1.3rem; /* Slightly smaller font size */
             border: none;
-            background-color: #4CAF50;
+            background-color: #7351fd;
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 20px; /* Default margin */
             transition: background-color 0.3s ease;
         }
 
         button[type="submit"]:hover {
             background-color: #45a049;
-            transition: background-color 0.3s ease;
-        }
-
-        button[type="submit"]:active {
-            transform: scale(0.98);
         }
 
         .footer {
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #ccc;
+            margin-top: 30px; /* Default margin */
+            font-size: 1rem; /* Default font size */
+            color: #f2f2f2;
             animation: fadeIn 2s ease-in-out;
         }
 
         .result {
-            margin-top: 30px;
-            font-size: 1.5rem;
+            margin-top: 30px; /* Default margin */
+            font-size: 1.6rem; /* Reduced font size */
             color: #fff;
             font-weight: bold;
-            padding: 15px;
+            padding: 15px; /* Default padding */
             border-radius: 5px;
         }
 
@@ -125,8 +148,9 @@
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="window.location.href='https://jeffrinjim55.github.io/mainproject/';">Back</button>
     <div class="container">
-        <div class="title">Pneumonia Diagnosis using X-ray</div>
+        <div class="title">Pneumonia Diagnosis using <br>X-ray</div>
         <p>Upload an X-ray image to diagnose pneumonia</p>
         <form action="/predict" method="POST" enctype="multipart/form-data">
             <div class="form-group">
